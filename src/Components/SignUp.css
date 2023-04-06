@@ -1,68 +1,62 @@
-.signUpContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: rgb(27, 3, 3);
-    /* background-color: rgb(240, 240, 240); */
-}
-
-.signUpContainer .signUpHere {
-    margin-bottom: 2.5rem;
-    font-weight: 600;
-    margin-top: 2rem;
-}
-
-.signUpContainer form {
-    width: 100%;
-}
-
-.signUpContainer form input {
-    width: 95%;
-    margin: auto;
-    height: 2.2rem;
-    border-radius: 0.5rem;
-    border: none;
-    border: 0.2px solid rgb(176, 171, 171);
-    padding-left: 0.5rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-}
-
-.signUpContainer form input::placeholder {
-    padding-left: 0.5rem;
-    font-size: 0.75rem;
-}
-
-.signUpContainer form button {
-    background-color: rgb(27, 3, 3);
-    color: white;
-    font-weight: 500;
-    width: 95%;
-    margin: auto;
-    height: 2.2rem;
-    border-radius: 0.5rem;
-    border: none;
-    border: 0.2px solid rgb(176, 171, 171);
-    padding-left: 0.5rem;
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-}
-
-.signUpContainer .footerdata {
-    font-size: 0.7rem;
-    color: rgb(98, 97, 97);
-    margin: 1.4rem 0rem;
-}
-
-.signUpContainer .alreadyHaveAccount {
-    font-weight: 600;
-    font-size: 0.8rem;
-    color: rgb(98, 97, 97);
-}
-
-.alreadyHaveAccount a {
-    text-decoration: none;
-    color: rgb(98, 97, 97);
+@media screen and (max-width: 600px) {
+    .signUpContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: rgb(27, 3, 3);
+        /* background-color: rgb(240, 240, 240); */
+    }
+    .signUpContainer .signUpHere {
+        margin-bottom: 2.5rem;
+        font-weight: 600;
+        margin-top: 2rem;
+    }
+    .signUpContainer form {
+        width: 100%;
+    }
+    .signUpContainer form input {
+        width: 95%;
+        margin: auto;
+        height: 2.2rem;
+        border-radius: 0.5rem;
+        border: none;
+        border: 0.2px solid rgb(176, 171, 171);
+        padding-left: 0.5rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+    .signUpContainer form input::placeholder {
+        padding-left: 0.5rem;
+        font-size: 0.75rem;
+    }
+    .signUpContainer form button {
+        background-color: rgb(27, 3, 3);
+        color: white;
+        font-weight: 500;
+        width: 95%;
+        margin: auto;
+        height: 2.2rem;
+        border-radius: 0.5rem;
+        border: none;
+        border: 0.2px solid rgb(176, 171, 171);
+        padding-left: 0.5rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+    .signUpContainer .footerdata {
+        font-size: 0.7rem;
+        color: rgb(98, 97, 97);
+        margin: 1.4rem 0rem;
+    }
+    .signUpContainer .alreadyHaveAccount {
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: rgb(98, 97, 97);
+    }
+    .alreadyHaveAccount a {
+        text-decoration: none;
+        color: rgb(98, 97, 97);
+    }
 }
