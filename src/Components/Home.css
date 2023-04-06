@@ -1,0 +1,33 @@
+.homePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    height: 65vh;
+}
+
+.homePage a {
+    text-decoration: none;
+    width: 60%;
+}
+
+.homePage h5 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.homePage button {
+    background-color: rgb(27, 3, 3);
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    height: 2.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    border: 0.2px solid rgb(176, 171, 171);
+}
+
+.homePage p {
+    font-size: 0.8rem;
+}

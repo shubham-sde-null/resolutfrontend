@@ -1,0 +1,80 @@
+.addResourceContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: rgb(27, 3, 3);
+}
+
+.addResourceContainer .addResourceHere {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    padding: 0 0.3rem;
+}
+
+.addResourceContainer .addResourceHere p:first-child {
+    font-size: 1.1rem;
+    color: rgb(27, 3, 3);
+}
+
+.addResourceContainer .addResourceHere p:nth-child(2) {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgb(27, 3, 3);
+}
+
+.addResourceContainer form {
+    width: 100%;
+}
+
+.addResourceContainer form input {
+    width: 95%;
+    margin: auto;
+    height: 2.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    border: 0.2px solid rgb(176, 171, 171);
+    padding-left: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+.addResourceContainer form input::placeholder {
+    padding-left: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.addResourceContainer form select {
+    width: 95%;
+    margin: auto;
+    height: 2.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    border: 0.2px solid rgb(176, 171, 171);
+    padding-left: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1.4rem;
+}
+
+.addResourceContainer form button {
+    background-color: rgb(27, 3, 3);
+    color: white;
+    font-weight: 500;
+    width: 95%;
+    margin: auto;
+    height: 2.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    border: 0.2px solid rgb(176, 171, 171);
+    padding-left: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+}
+
+#designation option[value=""] {
+    color: yellow;
+}
