@@ -3,8 +3,12 @@ import { useState, useEffect } from "react";
 import "./SignUp.css";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { valueChanged } from "../redux/action";
 import axios from "axios";
 function SignUp() {
+  const disptach = useDispatch();
+  const navigate = useNavigate();
   const dataIsCorrect = (values) => {
     if (values.password !== values.repassword) {
       return false;
@@ -19,7 +23,7 @@ function SignUp() {
 
     return false;
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   //I have just used it outside to make the code clean I could have put it inside the useState as well
   const initialValues = {
     username: "",
@@ -56,7 +60,15 @@ function SignUp() {
         "https://repulsive-leotard-fly.cyclic.app/registeruser",
         userInfoToAdd
       );
+      alert("registration successful");
+      setFormValues({
+        username: "",
+        email: "",
+        password: "",
+        repassword: "",
+      });
       navigate("/login");
+      disptach(valueChanged(1));
     }
   };
   //here I am using the useEffect to check if the errors are present in the form field or not

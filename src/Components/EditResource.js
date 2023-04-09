@@ -5,11 +5,18 @@ import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { updateData } from "../redux/action";
+// import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { valueChanged } from "../redux/action";
 function EditResource() {
+  // const valueInAdd = useSelector((state) => state);
+  // console.log("the value in the edit resource is", valueInAdd);
+  const dispatch = useDispatch();
   const location = useLocation();
   const actualObjecet = location.state.resource;
   const [oldFormValues, setOldFormValues] = useState(actualObjecet);
-  console.log("the actual objects are the", actualObjecet);
+  // console.log("the actual objects are the", actualObjecet);
 
   const navigate = useNavigate();
 
@@ -29,6 +36,19 @@ function EditResource() {
       updateValues
     );
     navigate("/resources");
+    dispatch(
+      updateData(
+        oldFormValues.id,
+        oldFormValues.username,
+        oldFormValues.email,
+        oldFormValues.designation,
+        oldFormValues.password,
+        oldFormValues.today,
+        oldFormValues.billable,
+        oldFormValues.nonbillable
+      )
+    );
+    dispatch(valueChanged(1));
   };
 
   return (

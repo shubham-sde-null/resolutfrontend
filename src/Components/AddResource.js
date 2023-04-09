@@ -5,7 +5,11 @@ import Navbar from "../Navbar/Navbar";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { valueChanged } from "../redux/action";
+import { addData } from "../redux/action";
 function AddResource() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const initialValues = {
     username: "",
@@ -39,6 +43,19 @@ function AddResource() {
       dataToAdd
     );
     navigate("/resources");
+    dispatch(
+      addData(
+        dataToAdd.id,
+        formValues.username,
+        formValues.email,
+        formValues.designation,
+        formValues.password,
+        dataToAdd.today,
+        dataToAdd.billable,
+        dataToAdd.nonbillable
+      )
+    );
+    dispatch(valueChanged(1));
   };
 
   useEffect(() => {

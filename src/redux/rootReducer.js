@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import { userPresentInfo } from "./reducer";
+import { renderPage, addData } from "./reducer";
 export default combineReducers({
-  userPresentInfo: userPresentInfo,
+  renderPage: renderPage,
+  addData: addData,
 });

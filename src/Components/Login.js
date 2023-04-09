@@ -5,10 +5,11 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { resourceData } from "../redux/action";
+import { valueChanged } from "../redux/action";
 function Login() {
+  //this is used to run the useeffect again such that I will get the latest records in the user list
   const dataInRedux = useSelector((state) => state);
-  console.log("the data from the redux is", dataInRedux);
+  // console.log("the data from the redux is", dataInRedux);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -26,11 +27,11 @@ function Login() {
         "https://repulsive-leotard-fly.cyclic.app/users"
       );
       setInfo(response.data);
-      console.log("the info is", info);
+      // console.log("the info is", info);
     };
     retriveData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [email, password, dataInRedux]);
   const handleSubmit = (e) => {
     e.preventDefault();
     const userPresent = info.filter((data) => {
@@ -42,7 +43,7 @@ function Login() {
     } else {
       alert("user is not present");
     }
-    dispatch(resourceData(true));
+    dispatch(valueChanged(1));
   };
   return (
     <div className="loginContainer">

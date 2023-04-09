@@ -10,33 +10,49 @@ import { FaCoins } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteData } from "../redux/action";
 import axios from "axios";
 function ResourceDetail() {
-  const userPresent = useSelector((state) => state);
-  console.log("user is", userPresent);
+  const dispatch = useDispatch();
+  const userPresent = useSelector((state) => state.addData);
+  // console.log("user is", userPresent);
   const [allResourceData, setAllResourceData] = useState([]);
+  // const removeResource = async (id) => {
+  //   await axios.delete(
+  //     `https://repulsive-leotard-fly.cyclic.app/allresource/${id}`
+  //   );
+  //   const newResourceList = allResourceData.filter((resource) => {
+  //     return resource.id !== id;
+  //   });
+  //   setAllResourceData(newResourceList);
+  // };
   const removeResource = async (id) => {
     await axios.delete(
       `https://repulsive-leotard-fly.cyclic.app/allresource/${id}`
     );
-    const newResourceList = allResourceData.filter((resource) => {
-      return resource.id !== id;
-    });
-    setAllResourceData(newResourceList);
+    // const newResourceList = allResourceData.filter((resource) => {
+    //   return resource.id !== id;
+    // });
+    // setAllResourceData(newResourceList);
+    dispatch(deleteData(id));
   };
 
+  // useEffect(() => {
+  //   const retriveData = async () => {
+  //     const response = await axios.get(
+  //       "https://repulsive-leotard-fly.cyclic.app/allresource"
+  //     );
+  //     setAllResourceData(response.data);
+  //     console.log("the resource is", allResourceData);
+  //   };
+  //   // retriveData();
+  //   setTimeout(retriveData, 1000);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
   useEffect(() => {
-    const retriveData = async () => {
-      const response = await axios.get(
-        "https://repulsive-leotard-fly.cyclic.app/allresource"
-      );
-      setAllResourceData(response.data);
-      console.log("the resource is", allResourceData);
-    };
-    setTimeout(retriveData, 1000);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    setAllResourceData(userPresent);
+  }, [userPresent]);
   return (
     <div>
       <Navbar2 />
