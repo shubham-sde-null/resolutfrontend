@@ -13,8 +13,10 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteData } from "../redux/action";
 import axios from "axios";
+
 function ResourceDetail() {
   const dispatch = useDispatch();
+
   const userPresent = useSelector((state) => state.addData);
   // console.log("user is", userPresent);
   const [allResourceData, setAllResourceData] = useState([]);
@@ -51,6 +53,14 @@ function ResourceDetail() {
   //   // eslint-disable-next-line react-hooks/exhaustive-deps
   // }, []);
   useEffect(() => {
+    //   const retriveData = async () => {
+    //     const response = await axios.get(
+    //       "https://repulsive-leotard-fly.cyclic.app/allresource"
+    //     );
+    //     setAllResourceData(response.data);
+    //     console.log("the resource is", allResourceData);
+    //   };
+    //   // retriveData();
     setAllResourceData(userPresent);
   }, [userPresent]);
   return (

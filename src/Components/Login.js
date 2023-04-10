@@ -37,7 +37,7 @@ function Login() {
     const userPresent = info.filter((data) => {
       return data.email === email && data.password === password;
     });
-    if (userPresent.length === 1) {
+    if (userPresent.length >= 1) {
       alert("login successful");
       navigate("/resources");
     } else {

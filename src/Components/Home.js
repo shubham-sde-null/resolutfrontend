@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "../redux/action";
+
 function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProducts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <p

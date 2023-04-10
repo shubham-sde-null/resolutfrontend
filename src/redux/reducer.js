@@ -1,13 +1,4 @@
-// import { USER_PRESENT } from "./action";
-// export const userPresentInfo = (userPresent = false, action) => {
-//   switch (action.type) {
-//     case USER_PRESENT:
-//       return action.payload;
-//     default:
-//       return userPresent;
-//   }
-// };
-import { COUNTER, ADD, UPDATE, DELETE } from "./action";
+import { COUNTER, ADD, UPDATE, DELETE, SET_PRODUCTS } from "./action";
 export const renderPage = (count = 0, action) => {
   switch (action.type) {
     case COUNTER:
@@ -18,6 +9,8 @@ export const renderPage = (count = 0, action) => {
 };
 export const addData = (oldValues = [], action) => {
   switch (action.type) {
+    case SET_PRODUCTS:
+      return [...action.payload];
     case ADD:
       return [...oldValues, action.payload];
     case UPDATE:
