@@ -30,6 +30,9 @@ function EditResource() {
       username: oldFormValues.username,
       email: oldFormValues.email,
       designation: oldFormValues.designation,
+      today: oldFormValues.today,
+      billable: oldFormValues.billable,
+      nonbillable: oldFormValues.nonbillable,
     };
     await axios.put(
       `https://repulsive-leotard-fly.cyclic.app/allresource/${oldFormValues.id}`,
